@@ -2,7 +2,7 @@ body {
   background-color: #DCD9D4;
   background-image: linear-gradient(to bottom, rgba(255,255,255,0.50) 0%, rgba(0,0,0,0.50) 100%), radial-gradient(at 50% 0%, rgba(255,255,255,0.10) 0%, rgba(0,0,0,0.50) 50%);
   background-blend-mode: soft-light,screen;  font-family: 'Arial', sans-serif;
-  color: #333;
+  color: #0f0e0e;
   margin: 0;
   padding: 0;
   height: 100vh;
@@ -10,12 +10,13 @@ body {
   justify-content: center;
   align-items: center;
   padding: 20px 0 0 0;
+  overflow-x:hidden;  
 
 }
 body.zoomed-out {
-  transform: scale(0.8);          /* Scale down to 80% of the original size */
-  transition: transform 0.5s;    /* Transition effect duration */
-  overflow: hidden;              /* Prevent scrollbar appearance during zoom */
+  transform: scale(0.8);         
+  transition: transform 0.5s;    
+  overflow: hidden;              
 }
 
 .container {
@@ -60,27 +61,12 @@ h2 {
   background-color: #dddddd;
 }
 .codeLogo {
-  width: 250px;  /* Adjust as desired */
+  width: 250px;  
   height: auto;
-  margin-right: auto;  /* Pushes the button to the right */
-}
-.nav-btn {
-  padding: 5px 10px;
-  background-color: #131616;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s ease;
-  margin-right: 90px;
+  margin-right: auto;  
+  margin-top:20px;
 }
 
-.nav-btn:hover {
-  background-color: #dddddd;
-  color: #131616;
-}
 
 .content {
   padding: 20px;
@@ -89,29 +75,92 @@ h2 {
 .navbar {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Distributes items evenly with max space between */
-  background-color: #fff;
-  padding: 5px 2%; /* Reduced padding to provide more space */
-  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  justify-content: space-between;
+  background-color: transparent;  /* Make the background transparent */
+  background-image: none;         /* Remove any background images */
+  font-family: 'Arial', sans-serif;
+  padding: 5px 2%; 
   width: 100%;
   position: fixed;
   top: 0;
   left: 0;
   height:50px;
   z-index: 1000;
+  box-shadow: none;  /* Remove the box-shadow */
+
 }
-.gif-container {
-  background-color: #DCD9D4;
-  display: inline-block;  /* Makes the div size match the content */
-  border-radius: 20%;
-  overflow: hidden;
-  width: 50vw;
-  height: 90vh;
+#networkGif {
+  border-radius: 30%; 
+  display: block;
+  width: 40vw;  
+  height: 40vw;
+  background-color: #DCD9D4; 
+  position: absolute;  /* Allows for precise positioning */
+  right: 40px;  /* Moves the gif 20 pixels away from the right edge */
+  top: 100px;  /* Moves the gif 30 pixels upwards */
+}
+h1 {
+  font-size: 5em; 
+  background: linear-gradient(to right, rgb(0, 0, 0), black, rgb(0, 0, 0)); 
+  color: transparent; 
+  -webkit-background-clip: text;
+  background-clip: text;
+  /* Resetting these properties */
+  position: static; 
+  left: 0;
+  margin-top: -330px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
-.gif-container img {
-  display: block;
-  width:100%;
-  height:100%;
+.content {
+  display: flex;            /* Make this a flex container */
+  flex-direction: column;   /* Stack children vertically */
+  justify-content: center;  /* Center children horizontally */
+  align-items: center;      /* Center children vertically */
+  padding: 20px;
+}
+
+
+
+
+textarea {
+  width: 100%;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #b3aeae;
+  resize: none;
+}
+.grid-container {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  border-radius: 5px; 
+}
+#changingPhrase {
+  display: block;  /* Make it behave like a block element */
+  height: 50px;  /* Set a fixed height; adjust as needed */
+  line-height: 50px;  /* Vertically center the text; should match the height */
+  overflow: hidden;  /* Hide any overflow to prevent vertical expansion */
+  margin-left:110px;
+}
+#wave {
+  position: absolute; 
+  bottom: 0;           /* Position it at the bottom */
+  left: 0;             /* Start from the left edge */
+  width: 100%;         /* Span the full width of the viewport */
+  height: 60%;       /* Adjust based on the height of your wave image */
+  background: url('../assets/wave2.svg') no-repeat bottom center; 
+  background-size: cover;  /* Resize the image to cover the entire width of the viewport */
+}
+h2 {
+  font-weight: 300; /* Makes the text thinner */
+  font-size: 18px;  /* Adjusts the font size */
+  text-align: center;
+  margin-bottom: 70px;
+}
+#blurbText {
+  font-weight: 600;
 }
 
