@@ -1,9 +1,6 @@
-document.addEventListener("DOMContentLoaded", function () {
-  // Your code here
-  document.getElementById("getStartedButton").addEventListener("click", () => {
-    console.log("Button Clicked");
-    window.location.href = "form.html";
-  });
+document.getElementById("getStartedButton").addEventListener("click", () => {
+  console.log("Button Clicked");
+  window.location.href = "form.html";
 });
 
 const phrases = ["Collaborate", "Connect", "Innovate", "Network"];
