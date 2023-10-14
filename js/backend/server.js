@@ -9,11 +9,14 @@ const app = express();
 // Connect to MongoDB using Mongoose
 mongoose
   .connect(
-    "mongodb+srv://heyanantraj:Welcome.2020@peopleinfo.18l4vgp.mongodb.net/?retryWrites=true&w=majority/PeopleInfo",
+    "mongodb+srv://heyanantraj:Welcome.2020@peopleinfo.18l4vgp.mongodb.net/infoDb",
     { useNewUrlParser: true, useUnifiedTopology: true }
   )
   .then(() => {
     console.log("Connected to MongoDB");
+  })
+  .catch((err) => {
+    console.log(err);
   });
 
 // Create a Mongoose schema and model
