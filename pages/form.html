@@ -17,7 +17,7 @@
         </a>
         <button class="nav-btn" id="connectingBtn">Start Connecting...</button>
       </nav>
-      <h2>Submit Your Post</h2>
+      <h2>Start Your Post</h2>
       <form id="project-form" class="mt-4" method="post" action="/">
         <div class="form-group">
           <label for="language">First Name:</label>
@@ -33,12 +33,20 @@
         </div>
         <div class="form-group">
           <label for="framework">Language:</label>
-          <input placeholder="Email" />
+          <select name="language" id="language">
+            <option value="javascript">JavaScript</option>
+            <option value="python">Python</option>
+            <option value="java">Java</option>
+            <option value="csharp">C#</option>
+            <option value="ruby">Ruby</option>
+            <option value="cplusplus">C++</option>
+            <option value="matlab">Matlab</option>
+            <option value="HTMLCSS">HTML & CSS</option>
+            <option value="php">PHP</option>
+            <!-- Add more options as needed -->
+          </select>
         </div>
-        <div class="form-group">
-          <label for="framework">Github:</label>
-          <input placeholder="Email" />
-        </div>
+
         <div class="form-group">
           <label for="framework">Description:</label>
           <textarea placeholder="description"></textarea>
