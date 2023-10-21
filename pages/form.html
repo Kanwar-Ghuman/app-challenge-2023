@@ -18,20 +18,25 @@
         <button class="nav-btn" id="connectingBtn">Start Connecting...</button>
       </nav>
       <h2>Start Your Post</h2>
-      <form id="project-form" class="mt-4" method="post" action="/">
+      <form id="project-form" class="mt-4">
         <div class="form-group">
-          <label for="language">First Name:</label>
-          <input type="text" name="firstName" placeholder="First Name" />
-        </div>
-        <div class="form-group">
-          <label for="framework">Last Name:</label>
-          <input type="text" name="lastName" placeholder="Last Name" />
+          <label for="language">Name:</label>
+          <input type="text" id="name" name="name" placeholder="Name" />
         </div>
         <div class="form-group">
           <label for="framework">Email:</label>
-          <input type="email" name="email" placeholder="Email" />
+          <input type="email" name="email" id="email" placeholder="Email" />
         </div>
         <div class="form-group">
+          <div class="form-group">
+            <label for="imageUrl">Image URL:</label>
+            <input
+              type="url"
+              name="imageUrl"
+              id="imageUrl"
+              placeholder="Enter Image URL"
+            />
+          </div>
           <label for="framework">Language:</label>
           <select name="language" id="language">
             <option value="javascript">JavaScript</option>
@@ -43,23 +48,24 @@
             <option value="matlab">Matlab</option>
             <option value="HTMLCSS">HTML & CSS</option>
             <option value="php">PHP</option>
-            <!-- Add more options as needed -->
           </select>
         </div>
 
         <div class="form-group">
           <label for="framework">Description:</label>
-          <textarea placeholder="description"></textarea>
+          <textarea id="description" placeholder="description"></textarea>
         </div>
-
-        <button type="submit" class="btn btn-primary">Submit</button>
       </form>
+      <button id="submitBtn" class="btn btn-primary">Submit</button>
     </div>
     <script>
       document.getElementById("connectingBtn").addEventListener("click", () => {
         window.location.href = "network.html";
       });
+      document.getElementById("submitBtn").addEventListener("click", () => {
+        window.location.href = "network.html";
+      });
     </script>
-    <script src="../js/backend/server.js"></script>
+    <script src="../js/form.js"></script>
   </body>
 </html>
