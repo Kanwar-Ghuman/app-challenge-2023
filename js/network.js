@@ -6,41 +6,34 @@ function main() {
       let key = localStorage.key(i);
       let value = localStorage.getItem(key);
       let updated = value.split(",");
-      console.log(typeof updated);
       historyHTML += `
-<div class="card">
-  <div class="card-content">
-    <h3>${key}</h3>
-    <p>@${updated[0]}</p>
-    <p>Languages Used: ${updated[2]}</p>
-    <p>${updated[3]}</p>
-    <img style="width: 150px; border-radius:10px;" src="${updated[4]}"/>
-    
-    <button class="btn-accept">Accept</button>
-    <button class="btn-deny">Deny</button>
-  </div>
-</div>`;
+        <div class="cards-container">
+          <article class="cta">
+            <img src='${updated[4]}' alt='Profile Image' style="border-radius:10px;">
+            <div class="cta__text-column">
+              <h2><a href="mailto:${updated[1]}" style="text-decoration: none; color: inherit;">@${updated[0]}</a></h2>
+              <p>Languages Used: ${updated[2]}</p>
+              <p>${updated[3]}</p>
+              <button class="btn-accept">Accept</button>
+              <button class="btn-deny">Deny</button>
+            </div>
+          </article>
+        </div>`;
     }
     network.innerHTML = historyHTML;
-    // Get all the Accept and Deny buttons
+
     const acceptButtons = document.querySelectorAll(".btn-accept");
     const denyButtons = document.querySelectorAll(".btn-deny");
 
-    // Loop through each Accept button and add an event listener
-    acceptButtons.forEach((btn, index) => {
+    acceptButtons.forEach((btn) => {
       btn.addEventListener("click", () => {
-        // Handle accept action
-        console.log(`Accepted card with key: ${localStorage.key(index)}`);
-        // Optionally, you can remove the card or change its status here
+        btn.parentElement.parentElement.parentElement.style.display = "none"; // hide the card
       });
     });
 
-    // Loop through each Deny button and add an event listener
-    denyButtons.forEach((btn, index) => {
+    denyButtons.forEach((btn) => {
       btn.addEventListener("click", () => {
-        // Handle deny action
-        console.log(`Denied card with key: ${localStorage.key(index)}`);
-        // Optionally, you can remove the card or change its status here
+        btn.parentElement.parentElement.parentElement.style.display = "none"; // hide the card
       });
     });
   });

@@ -76,7 +76,6 @@ h2 {
   margin-top: 20px;
 }
 
-
 .navbar {
   display: flex;
   align-items: center;
@@ -163,18 +162,18 @@ h2 {
 }
 
 #nextScreen {
-  transform: translateX(100%); 
-  transition: transform 0.5s ease-in-out; 
+  transform: translateX(100%);
+  transition: transform 0.5s ease-in-out;
   position: absolute;
   top: 0;
   width: 100%;
   height: 100vh;
-  background: white; 
-  z-index: 10; 
+  background: white;
+  z-index: 10;
 }
 
 #nextScreen.slide-in {
-  transform: translateX(0); 
+  transform: translateX(0);
 }
 
 #connectingBtn {
@@ -193,7 +192,6 @@ h2 {
 
 #connectinBtn:hover {
   background-color: #dddddd;
-
 }
 
 .card {
@@ -203,14 +201,14 @@ h2 {
   border-radius: 5px;
   margin: 10px;
   padding: 10px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   max-width: 50vw;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease-in-out;
 }
 
 .card:hover {
-  box-shadow: 0 7px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 7px 10px rgba(0, 0, 0, 0.1);
   transform: scale(1.05);
 }
 
@@ -244,12 +242,11 @@ h2 {
   margin-top: 15px;
 }
 
-
 @media screen and (max-width: 600px) {
   .card {
     flex-direction: column;
   }
-  
+
   .card img {
     margin-right: 0;
     margin-bottom: 10px;
@@ -257,11 +254,11 @@ h2 {
 }
 
 form {
-  width:100%;
+  width: 100%;
 }
 
 .form-group {
-  margin-bottom:15px;
+  margin-bottom: 15px;
 }
 
 label {
@@ -274,21 +271,20 @@ input[type="text"],
 input[type="email"],
 input[type="url"],
 textarea {
-    width: 95%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-    transition: border-color 0.3s ease;
+  width: 95%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
 }
 input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="url"]:focus,
 textarea:focus {
-    border-color: #007bff;
-    outline: none;
+  border-color: #007bff;
+  outline: none;
 }
 
-#description{
-  
+#description {
 }
