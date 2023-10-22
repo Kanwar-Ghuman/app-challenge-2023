@@ -16,6 +16,7 @@ html {
   height: auto;
   padding: 20px 0 0 0;
   overflow-x: hidden;
+  min-height: 100vh;
 }
 body.zoomed-out {
   transform: scale(0.8);
@@ -116,22 +117,19 @@ textarea {
   border-radius: 5px;
 }
 .cards-container {
-  width: 510px; /* Or whatever width you want */
-  height: 509px; /* Or whatever height you want */
+  width: 510px;
+  height: 509px;
   margin-bottom: 10px;
 }
 #network {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start; /* Align cards to the start */
-  gap: 20px; /* Space between cards. You can adjust as necessary */
+  justify-content: flex-start;
   margin-top: 30px;
   margin-left: 500px;
-  max-height: calc(
-    200vh - 50px
-  ); /* 100vh is the viewport height, 50px is the navbar height */
+  max-height: calc(200vh - 50px);
   overflow-y: auto;
-  gap: 100px;
+  gap: 40px;
 }
 #network::-webkit-scrollbar {
   display: none;
@@ -142,7 +140,7 @@ textarea {
   display: flex;
   flex-wrap: wrap;
   background: #dcd9d4;
-  max-width: 25rem; /* Adjusted max-width for smaller card */
+  max-width: 25rem;
   width: 100%;
   border-radius: 0.8rem;
   overflow: hidden;
@@ -154,13 +152,12 @@ textarea {
   height: auto;
   aspect-ratio: 3 / 2;
   object-fit: cover;
-  flex: 1 1 50px; /* Adjusted flex-basis for smaller image */
   outline: 0.5rem solid;
 }
 
 .cta__text-column {
   padding: min(1rem, 2.5vw) min(1rem, 2.5vw) min(1.5rem, 2.5vw);
-  flex: 1 0 90%; /* Adjusted flex-basis for smaller text column */
+  flex: 1 0 90%;
 }
 
 .cta__text-column button {
@@ -179,19 +176,19 @@ textarea {
 }
 
 .btn-accept {
-  background-color: #2e8b57; /* Accept button color */
+  background-color: #2e8b57;
 }
 
 .btn-deny {
-  background-color: #cd5c5c; /* Deny button color */
+  background-color: #cd5c5c;
 }
 
 .btn-accept:hover {
-  background-color: #228b22; /* Darken on hover */
+  background-color: #228b22;
 }
 
 .btn-deny:hover {
-  background-color: #b22222; /* Darken on hover */
+  background-color: #b22222;
 }
 
 form {
@@ -225,21 +222,47 @@ textarea:focus {
   outline: none;
 }
 .new-post-btn {
-  text-align: center; /* center the button horizontally */
-  margin-top: 50px; /* add space above the button */
-  margin-right: 540px;
+  text-align: center;
+  margin-top: 50px;
+  margin-right: 560px;
 }
 .create-post-btn {
-  background-color: #4caf50; /* green background */
-  color: white; /* white text */
-  padding: 12px 24px; /* vertical and horizontal padding */
-  border: none; /* no border */
-  border-radius: 8px; /* rounded corners */
-  text-decoration: none; /* remove underline from link */
-  font-size: 16px; /* set font size */
-  cursor: pointer; /* change cursor to pointer on hover */
-  transition: background-color 0.3s; /* smooth color transition on hover */
+  background-color: #4caf50;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 .create-post-btn:hover {
-  background-color: #45a049; /* slightly darker green on hover */
+  background-color: #45a049;
+}
+
+.sidebar {
+  position: fixed;
+  top: 150px; /* Adjust based on your navbar's height */
+  left: 0;
+  width: 200px; /* Adjust width as needed */
+  height: 100vh;
+  background-color: #2e2e2e;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.sidebar a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar a:hover {
+  background-color: #4caf50;
 }

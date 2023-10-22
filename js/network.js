@@ -6,8 +6,10 @@ function main() {
       let key = localStorage.key(i);
       let value = localStorage.getItem(key);
       let updated = value.split(",");
+      let status = "pending"; // Default status; modify this as per your application logic
+
       historyHTML += `
-        <div class="cards-container">
+        <div class="cards-container" data-status="${status}">
           <article class="cta">
             <img src='${updated[4]}' alt='Profile Image' style="border-radius:10px;">
             <div class="cta__text-column">
@@ -27,16 +29,62 @@ function main() {
 
     acceptButtons.forEach((btn) => {
       btn.addEventListener("click", () => {
-        btn.parentElement.parentElement.parentElement.style.display = "none"; // hide the card
+        btn.parentElement.parentElement.parentElement.setAttribute(
+          "data-status",
+          "accepted"
+        );
+        btn.parentElement.parentElement.parentElement.style.display = "none";
       });
     });
 
     denyButtons.forEach((btn) => {
       btn.addEventListener("click", () => {
-        btn.parentElement.parentElement.parentElement.style.display = "none"; // hide the card
+        btn.parentElement.parentElement.parentElement.setAttribute(
+          "data-status",
+          "denied"
+        );
+        btn.parentElement.parentElement.parentElement.style.display = "none";
       });
     });
   });
+
+  document
+    .getElementById("showAccepted")
+    .addEventListener("click", function (event) {
+      event.preventDefault(); // This prevents the default behavior of the <a> tag
+      document
+        .querySelectorAll(".cards-container")
+        .forEach((card) => (card.style.display = "none"));
+      document
+        .querySelectorAll(".cards-container[data-status='accepted']")
+        .forEach((card) => (card.style.display = "block"));
+    });
+
+  document
+    .getElementById("showDenied")
+    .addEventListener("click", function (event) {
+      event.preventDefault(); // This prevents the default behavior of the <a> tag
+      document
+        .querySelectorAll(".cards-container")
+        .forEach((card) => (card.style.display = "none"));
+      document
+        .querySelectorAll(".cards-container[data-status='denied']")
+        .forEach((card) => (card.style.display = "block"));
+    });
+  document
+    .querySelector(".sidebar")
+    .addEventListener("click", function (event) {
+      if (
+        event.target.tagName === "A" &&
+        event.target.getAttribute("href").startsWith("#")
+      ) {
+        event.preventDefault();
+        const targetElement = document.querySelector(
+          event.target.getAttribute("href")
+        );
+        targetElement.scrollIntoView({ behavior: "smooth" });
+      }
+    });
 }
 
 main();
